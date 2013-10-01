@@ -6,17 +6,14 @@ window.Journal = {
   Routers: {},
 
   initialize: function ($rootEl, posts) {
-    // var posts = new Journal.Collections.Posts();
-    // posts.add(data);
-    var postView = new Journal.Views.PostsIndex({
-      collection: posts
-    });
 
-    $rootEl.html(postView.render().$el);
+    new Journal.Routers.PostsRouter($rootEl, posts)
+    Backbone.history.start()
+    // $rootEl.html(postView.render().$el);
   }
 }
 
-$(function() {
+$(document).ready(function() {
 
   $.ajax({
     url: '/posts',
@@ -28,8 +25,8 @@ $(function() {
 
       posts.add(data);
 
-      console.log(posts)
     }
   });
+
 
 });

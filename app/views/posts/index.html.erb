@@ -1,0 +1,19 @@
+<h1>Posts</h1>
+
+<script type="application/json" id="bootstrapped_posts_json">
+  <%= @posts.to_json.html_safe %>
+</script>
+
+
+<script>
+
+$(function () {
+  var postsJSON = JSON.parse($("#bootstrapped_posts_json").html());
+
+  var posts = new Journal.Collections.Posts();
+  posts.add(postsJSON);
+
+  Journal.initialize($("#content"), posts);
+})
+
+</script>

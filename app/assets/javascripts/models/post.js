@@ -1,3 +1,3 @@
-var Journal.Models.Post = Backbone.Model.extend({
+Journal.Models.Post = Backbone.Model.extend({
   urlRoot: "/posts"
 });

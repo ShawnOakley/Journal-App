@@ -18,4 +18,23 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post = Post.find(params[:id])
+
+    if @post.destroy
+      render json: @post
+    else
+      render json: @post
+    end
+  end
+
+  def show
+    @post = Post.find(params[:id])
+    if @post
+      render json: @post
+    else
+      render json: @post
+    end
+  end
+
 end

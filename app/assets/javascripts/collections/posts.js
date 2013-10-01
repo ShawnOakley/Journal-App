@@ -1,4 +1,4 @@
-var Journal.Collections.Posts = Backbone.Collection.extend({
+Journal.Collections.Posts = Backbone.Collection.extend({
   url: "/posts",
-  model: Post
+  model: Journal.Models.Post
 });
