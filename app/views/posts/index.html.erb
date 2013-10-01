@@ -13,7 +13,7 @@ $(function () {
   var posts = new Journal.Collections.Posts();
   posts.add(postsJSON);
 
-  Journal.initialize($("#content"), posts);
+  Journal.initialize($("#sidebar"), $("#content"), posts);
 })
 
 </script>

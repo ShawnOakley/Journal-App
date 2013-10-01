@@ -5,11 +5,23 @@ window.Journal = {
   Views: {},
   Routers: {},
 
-  initialize: function ($rootEl, posts) {
+  initialize: function ($sidebar, $content, posts) {
 
-    new Journal.Routers.PostsRouter($rootEl, posts)
+    this._installSidebar($sidebar, posts)
+
+    new Journal.Routers.PostsRouter($content, posts)
     Backbone.history.start()
-    // $rootEl.html(postView.render().$el);
+
+  },
+
+  _installSidebar: function ($sidebar, posts) {
+      var that = this;
+
+      var postView = new Journal.Views.PostsIndex({
+        collection: posts
+      });
+
+      $sidebar.html(postView.render().$el)
   }
 }
 

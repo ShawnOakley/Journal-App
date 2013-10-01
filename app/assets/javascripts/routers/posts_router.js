@@ -5,19 +5,11 @@ Journal.Routers.PostsRouter = Backbone.Router.extend({
   },
 
   routes: {
-    "": "index",
+    "": "new",
     "posts/new" : "new",
     "posts/:id": "show",
     "posts/:id/edit" : "edit"
 
-  },
-
-  index: function (){
-    var that = this;
-    var postView = new Journal.Views.PostsIndex({
-      collection: that.posts
-    });
-    that.$rootEl.html(postView.render().$el)
   },
 
   new: function () {
