@@ -1,0 +1,15 @@
+<% var title = post.get("title"),
+        body = post.get("body");
+%>
+
+<form class="post-form">
+  <label> Title:
+  <input type="text" name="post[title]" value="<%= title %>">
+  </label>
+
+  <label> Body:
+  <input type="text" name="post[body]" value="<%= body %>">
+  </label>
+
+  <input class="edit-post" type="submit" value="Edit Post">
+</form>

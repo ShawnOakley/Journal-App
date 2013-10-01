@@ -16,7 +16,7 @@ Journal.Views.PostsIndex = Backbone.View.extend({
 
   render: function(){
     var that = this;
-    console.log("Rendering...")
+
     var ul = $("<ul></ul>");
     _(that.collection.models).each(function (post) {
       var $li = $("<li></li>");
